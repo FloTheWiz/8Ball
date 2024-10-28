@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Rubik+Dirt&family=Smokum&family=Special+Elite&family=Yusei+Magic&display=swap');
+
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+*{
+  font-family: 'Major Mono Display', monospace; 
+  align-content: center;
+  text-align: center;
+}
+h1 {
+  filter: drop-shadow(2px 2px 2px #333);
+  font-size: 3em;
+}
+h2 {
+  font-size: 5em;
+  font-family: 'yusei magic', cursive;
+  margin: 0;
+}
+.orb {
+  width: 256px;
+  height: 256px;
+  background-color: black;
+  border-radius: 25%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px #333;
+}
+.ball {
+  width: 75%;
+  height: 75%;
+  background-color: white;
+  border-radius: 50%;
+}
+#answer {
+  font-family: 'Yusei Magic', cursive;
+  transition: transform 0.3s;
+  font-size: 2em;
+  z-index: 5;
+}
+#question {
+  width: 30%;
+  font-family: 'Yusei Magic', cursive;
+  margin: 10px 0px;
+  font-size: 1.25em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #333;
+}
+#question:focus-visible{
+    outline-style: inherit;
+}
+@media (max-width: 768px) {
+  #question {
+    width: 80%;
+  }
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 2px 2px 2px #111;
+}
+.icon {
+  animation: rotate 5s infinite linear;
+}
+.fade {
+  will-change: opacity;
+  animation: fade-in-out 2s infinite linear;
+}
+button.active{
+    box-shadow: 2px 2px 3px #111;
+}
+.positive{
+  color: green;
+  will-change: transform;
+  animation: bounce 0.5s;
+}
+.negative{
+  color: red;
+  will-change: transform;
+  animation: shake 0.5s;
+}
+.neutral{
+  color: blue;
+  will-change: opacity;
+  animation: fade-in 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform:
+    translateY(0);}
+  50% {transform:
+    translateY(-20px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: 
+  translateX(0);}
+  25% { transform:
+  translateX(-10px);}
+  75% { transform: 
+  translateX(10px);}
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+@keyframes fade-in-out {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
